@@ -1,28 +1,34 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * is_palindrome - function to call check_pal to see if list is palindrome
- * @head: ptr to the beginning of the list
- * Return: 0 if not palindrome else 1
+ * is_palindrome - Check is the listint is a Palindrome
+ * @head: type listint_s double pointer of node
+ * return: 1 if is a pilndrome 0 if not
  */
+
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL || *head == NULL)
+	if (head == NULL && *head == NULL)
 		return (1);
-	return (check_pal(head, *head));
+	else
+		return (rec_palindrome(head, *head));
 }
 
 /**
- * check_pal - function to check if the list is palindrome
- * @head: ptr to the beginning of the list
- * @last: ptr to the end of the list
- * Return: 0 if not palindrom else 1
+ * rec_palindrome - Recursion to check each node as palindrome
+ * @head: type listint_s double pointer of node
+ * @tail: type listint_s single pointer of last node
+ * return: 1 if is a pilndrome 0 if not
  */
-int check_pal(listint_t **head, listint_t *last)
+
+int rec_palindrome(listint_t **head, listint_t *tail)
 {
-	if (last == NULL)
+	if (tail == NULL)
 		return (1);
-	if (check_pal(head, last->next) && (*head)->n == last->n)
+
+	if (rec_palindrome(head, tail->next) && (*head)->n == tail->n)
 	{
 		*head = (*head)->next;
 		return (1);
