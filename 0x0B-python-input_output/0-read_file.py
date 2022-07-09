@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-
 """
-    this function reads files passed to it as arguments
+This program reads files
 """
 
 
 def read_file(filename=""):
-    with open(filename, encoding="utf-8") as f:
-        print(f.read(), end='')
+    """
+    This function read a file and print it's content
+    """
+
+    with open(filename, encoding="utf-8") as _file:
+        print(_file.read(), end="")
