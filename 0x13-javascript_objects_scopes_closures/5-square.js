@@ -32,7 +32,7 @@ class Rectangle {
     this.height *= 2;
   }
 }
-class Square extends Rectangle() {
+class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
