@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""
-This program reads files
-"""
+"""funtion to read file"""
 
 
 def read_file(filename=""):
+    """function reads out file name
+        and prints to stdout.
+        Args:
+        filename:
+        file to read from
     """
-    This function read a file and print it's content
-    """
-
-    with open(filename, encoding="utf-8") as _f:
-        print(_f.read(), end="")
+    with open(filename, 'r', encoding='UTF-8') as f:
+        print(f.read(), end="")

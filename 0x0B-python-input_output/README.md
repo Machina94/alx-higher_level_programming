@@ -1,1 +1,7 @@
-Readme file for input output codes
+# Python Input and Output
+
+## Json
+
+## Serialization
+
+## Deserialization
